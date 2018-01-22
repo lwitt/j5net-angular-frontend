@@ -1,0 +1,33 @@
+<div class="row">
+	&nbsp;
+</div>
+<div ng-repeat="item in buttonList">
+	<div class="row">
+		<div class="col-sm" ng-repeat="item2 in item">
+			<div class="card text-center" ng-class="'card-outline-'+item2.style">
+				<div class="card-header"><small>{{item2.title}}</small></div>
+				<div class="card-block">
+					<div class="container-fluid">
+						<div ng-repeat="item3 in item2.content">
+							<div class="row">
+								<div class="col" ng-switch="item3.type">
+									<div ng-switch-when="updown"><button class="btn btn-primary" type="button"><span class="fa fa-chevron-down" aria-hidden="true"></span></button></div>
+									<div ng-switch-when="onoff"><button class="btn btn-info" type="button" ng-click="fireAction(item3.action_nodeid,item3.action_type,item3.action_off)">off</button></div>
+								</div>
+								<div class="col align-self-center">{{item3.label}}</div>
+								<div class="col" ng-switch="item3.type">
+									<div ng-switch-when="updown"><button class="btn btn-primary" type="button"><span class="fa fa-chevron-up" aria-hidden="true"></span></button></div>
+									<div ng-switch-when="onoff"><button class="btn btn-info" type="button" ng-click="fireAction(item3.action_nodeid,item3.action_type,item3.action_on)">on</button></div>
+								</div>
+							</div>
+							<div class="row">
+								&nbsp;
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">&nbsp;</div>
+</div>

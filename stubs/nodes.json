@@ -1,0 +1,34 @@
+[
+    {
+        "id" : 1,
+        "description" : "chambre",
+        "value1" : 20.5,
+        "value2": 98,
+        "unit1" : "°C",
+        "unit2" : "%"
+    },
+    {
+        "id" : 2,
+        "description" : "salon",
+        "value1" : 17.5,
+        "value2": 98,
+        "unit1" : "°C",
+        "unit2" : "%"
+    },
+    {
+        "id" : 5,
+        "description" : "extérieur nord",
+        "value1" : 8.5,
+        "value2": 98,
+        "unit1" : "°C",
+        "unit2" : "%"
+    },
+    {
+        "id" : 7,
+        "description" : "cave",
+        "value1" : 15.2,
+        "value2": 95,
+        "unit1" : "°C",
+        "unit2" : "%"
+    }
+]

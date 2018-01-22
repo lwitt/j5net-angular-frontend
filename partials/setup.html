@@ -1,0 +1,16 @@
+
+<div class="alert alert-success" style="position: fixed; top: 0; right: 0;" uib-alert close="closeAlert()" ng-if="saved" dismiss-on-timeout="2000" ng-animate="{enter: 'fade', leave: 'leave-slide'}"><strong>settings saved</strong></div>
+<form>
+	<div class="row">
+		<div class="col-xs-3 col-md-3" align="center">
+			<p>screensaver time</p>
+		</div>
+		<div class="col-xs-9 col-md-9" align="center">
+			<input type="range" min="0" max="600" step="10" required="" ng-change="update()" ng-model="form_screensaver_delay"> {{form_screensaver_delay==0 ? "disabled" : form_screensaver_delay +"secs"}}
+		</div>
+	</div>
+	<!-- <div class="row"> -->
+	<!-- <div class="col-xs-6 col-md-6" align="center">&nbsp;</div> -->
+	<!-- <div class="col-xs-6 col-md-6" align="center"><input type="submit" value="save" ng-click="update()"></div> -->
+	<!-- </div> -->
+</form>
