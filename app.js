@@ -32,7 +32,7 @@ app.config(function($routeProvider,$locationProvider) {
             templateUrl: 'partials/pollen.html',
             controller: 'pollenCtrl'
       }).
-      when('/detail/:nodeId', {
+      when('/detail/:gatewayId/:nodeId', {
             templateUrl: 'partials/detail.html',
             controller: 'nodeDetailCtrl'
       }).

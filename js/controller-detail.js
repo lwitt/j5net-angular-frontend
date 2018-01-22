@@ -1,6 +1,7 @@
 var app = angular.module('j5netControllers');
 
 app.controller('nodeDetailCtrl', ['$scope', 'webSocket', '$routeParams', 'nodes', function($scope, webSocket, $routeParams,nodes) {
+      $scope.gatewayId = $routeParams.nodeGatewayId || "gw0";
       $scope.nodeId = $routeParams.nodeId || 25;
 
       $scope.graphstate = 0;
@@ -93,7 +94,7 @@ app.controller('nodeDetailCtrl', ['$scope', 'webSocket', '$routeParams', 'nodes'
             $scope.nvd3_data[0].values.push({x:0,y:10});
             $scope.weather = data;
             $scope.graphstate = 2;
-            
+
       });
 
       $scope.$on('socket:node-detail', function (ev, data) {
@@ -131,7 +132,7 @@ app.controller('nodeDetailCtrl', ['$scope', 'webSocket', '$routeParams', 'nodes'
 
             webSocket.emit(
                   'node-detail',
-                  {   id: $scope.nodeId,
+                  {   id: ""+$scope.gatewayId+"/"+$scope.nodeId,
                         start : startDate,
                         end : endDate,
                   }
