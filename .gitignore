@@ -3,3 +3,4 @@ bower_components
 socket.io
 .DS_Store
 .gitignore
+rss.xml

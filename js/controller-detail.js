@@ -112,7 +112,7 @@ app.controller('nodeDetailCtrl', ['$scope', 'webSocket', '$routeParams', 'nodes'
                   }
             }
 
-            $scope.graphtitle = nodes.get($routeParams.nodeId).name;
+            $scope.graphtitle = nodes.get($routeParams.nodeId);
 
             $scope.graphstate = 2;
 
