@@ -26,7 +26,9 @@
     "angular-local-storage": "^0.6.0",
     "bootswatch": "^4.0.0",
     "webcam": "webcam-directive#^3.1.1",
-    "font-awesome": "fontawesome#^5.0.0"
+    "font-awesome": "fontawesome#^4.7.0",
+    "jquery": "^3.3.1",
+    "tether": "^1.4.3"
   },
   "resolutions": {
     "bootstrap": "^4.0.0",

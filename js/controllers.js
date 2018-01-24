@@ -69,6 +69,7 @@ app.controller('mainController', ['$scope', '$timeout', 'webSocket', 'nodes', 's
             // getting the initial node list
             webSocket.emit('nodes');
             webSocket.emit('weather');
+            webSocket.emit('traffic');
       });
 
       $scope.$on('socket:connect_error', function (ev, data){
@@ -87,6 +88,13 @@ app.controller('mainController', ['$scope', '$timeout', 'webSocket', 'nodes', 's
             applog.add("weather received","info");
       });
 
+      $scope.$on('socket:traffic', function (ev, data) {
+            console.log("traffic received");
+            console.log(data);
+            $scope.traffic = data;
+            applog.add("traffic received","info");
+      });
+
 
       setInterval(function() {
             if (timer==null && $scope.connected==true) {
@@ -94,6 +102,7 @@ app.controller('mainController', ['$scope', '$timeout', 'webSocket', 'nodes', 's
                   timer = setInterval(function() {
                         webSocket.emit('nodes');
                         webSocket.emit('car-position');
+                        webSocket.emit('traffic');
                         // console.log("asked for nodes");
                   },20000);
             }
