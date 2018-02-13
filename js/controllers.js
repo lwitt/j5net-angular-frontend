@@ -156,7 +156,11 @@ app.controller('controlCtrl', ['$scope','webSocket',function($scope,webSocket) {
                         style :     'info',
                         content:    [
                               {     label :           "tous les velux",
-                                    type :            "updown"
+                                    type :            "updown",
+                                    action_type :     "mqtt_publish",
+                                    action_on :       "{\"rs\":{\"id\":104,\"val1\":100,\"val2\":5,\"type\":\"p\"}}",
+                                    action_off :      "{\"rs\":{\"id\":105,\"val1\":100,\"val2\":5,\"type\":\"p\"}}",
+                                    action_nodeid :   "gw0/1"
                               },
                               {     label :           "tous les volets",
                                     type :            "updown"
