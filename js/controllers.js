@@ -89,8 +89,8 @@ app.controller('mainController', ['$scope', '$timeout', 'webSocket', 'nodes', 's
       });
 
       $scope.$on('socket:traffic', function (ev, data) {
-            console.log("traffic received");
-            console.log(data);
+            // console.log("traffic received");
+            // console.log(data);
             $scope.traffic = data;
             applog.add("traffic received","info");
       });
@@ -143,9 +143,9 @@ app.controller('mainController', ['$scope', '$timeout', 'webSocket', 'nodes', 's
 
 app.controller('controlCtrl', ['$scope','webSocket',function($scope,webSocket) {
 
-        $scope.fireAction = function (nodeid,type,action) {
-            console.log("action fired " + nodeid + " : " + action);
-            webSocket.emit('action',JSON.stringify({nodeid: nodeid,type : type, action: action}));
+        $scope.fireAction = function (nodeid,type,action,action_id) {
+            console.log("action fired : action_id=" + action_id);
+            webSocket.emit('action',JSON.stringify({nodeid: nodeid,type : type, action: action,action_id:action_id}));
         }
 
       $scope.buttonList =
@@ -157,10 +157,8 @@ app.controller('controlCtrl', ['$scope','webSocket',function($scope,webSocket) {
                         content:    [
                               {     label :           "tous les velux",
                                     type :            "updown",
-                                    action_type :     "mqtt_publish",
-                                    action_on :       "{\"rs\":{\"id\":104,\"val1\":100,\"val2\":5,\"type\":\"p\"}}",
-                                    action_off :      "{\"rs\":{\"id\":105,\"val1\":100,\"val2\":5,\"type\":\"p\"}}",
-                                    action_nodeid :   "gw0/1"
+                                    action_id_on :    100,
+                                    action_id_off :   101
                               },
                               {     label :           "tous les volets",
                                     type :            "updown"
@@ -172,38 +170,28 @@ app.controller('controlCtrl', ['$scope','webSocket',function($scope,webSocket) {
                         content:    [
                               {     label :           "tout le salon",
                                     type :            "onoff",
-                                    action_type :     "rc_emit",
-                                    action_on :       "757050000+757050001+757050002+1585815440",
-                                    action_off :      "757049984+757049985+757049986+1585815424",
-                                    action_nodeid :   100
+                                    action_id_on :    200,
+                                    action_id_off :   201
                               },
                               {     label :           "luminaire",
                                     type :            "onoff",
-                                    action_type :     "rc_emit",
-                                    action_on :       757050000,
-                                    action_off :      757049984,
-                                    action_nodeid :   100
+                                    action_id_on :    202,
+                                    action_id_off :   203
                               },
                               {     label :           "lumière TV",
                                     type :            "onoff",
-                                    action_type :     "rc_emit",
-                                    action_on :       757050001,
-                                    action_off :      757049985,
-                                    action_nodeid :   100
+                                    action_id_on :    204,
+                                    action_id_off :   205
                               },
                               {     label :           "girlande escalier",
                                     type :            "onoff",
-                                    action_type :     "rc_emit",
-                                    action_on :       757050002,
-                                    action_off :      757049986,
-                                    action_nodeid :   100
+                                    action_id_on :    206,
+                                    action_id_off :   207
                               },
                               {     label :           "girlande sapin",
                                     type :            "onoff",
-                                    action_type :     "rc_emit",
-                                    action_on :       1585815440,
-                                    action_off :      1585815424,
-                                    action_nodeid :   100
+                                    action_id_on :    208,
+                                    action_id_off :   209
                               }
                         ]
                   }
@@ -228,17 +216,13 @@ app.controller('controlCtrl', ['$scope','webSocket',function($scope,webSocket) {
                         content:    [
                               {     label :     "luminaire",
                                     type :      "onoff",
-                                    action_type :     "relay/1",
-                                    action_on :       "on",
-                                    action_off :      "off",
-                                    action_nodeid :   100
+                                    action_id_on :    300,
+                                    action_id_off :   301
                               },
                               {     label :     "applique",
                                     type :      "onoff",
-                                    action_type :     "relay/2",
-                                    action_on :       "on",
-                                    action_off :      "off",
-                                    action_nodeid :   100
+                                    action_id_on :    302,
+                                    action_id_off :   303
                               }
                         ]
                   }
