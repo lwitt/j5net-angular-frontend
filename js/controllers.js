@@ -143,9 +143,9 @@ app.controller('mainController', ['$scope', '$timeout', 'webSocket', 'nodes', 's
 
 app.controller('controlCtrl', ['$scope','webSocket',function($scope,webSocket) {
 
-        $scope.fireAction = function (nodeid,type,action,action_id) {
-            console.log("action fired : action_id=" + action_id);
-            webSocket.emit('action',JSON.stringify({nodeid: nodeid,type : type, action: action,action_id:action_id}));
+        $scope.fireAction = function (type,name,action) {
+            console.log("action fired : name=" + name);
+            webSocket.emit('action',JSON.stringify({type : type, name:name, action:action}));
         }
 
       $scope.buttonList =
@@ -157,8 +157,7 @@ app.controller('controlCtrl', ['$scope','webSocket',function($scope,webSocket) {
                         content:    [
                               {     label :           "tous les velux",
                                     type :            "updown",
-                                    action_id_on :    100,
-                                    action_id_off :   101
+                                    name :       "velux1"
                               },
                               {     label :           "tous les volets",
                                     type :            "updown"
@@ -170,28 +169,23 @@ app.controller('controlCtrl', ['$scope','webSocket',function($scope,webSocket) {
                         content:    [
                               {     label :           "tout le salon",
                                     type :            "onoff",
-                                    action_id_on :    200,
-                                    action_id_off :   201
+                                    name :       "flex_lamp"
                               },
                               {     label :           "luminaire",
                                     type :            "onoff",
-                                    action_id_on :    202,
-                                    action_id_off :   203
+                                    name :       "flex_lamp5"
                               },
                               {     label :           "lumière TV",
                                     type :            "onoff",
-                                    action_id_on :    204,
-                                    action_id_off :   205
+                                    name:        "flex_lamp4"
                               },
                               {     label :           "girlande escalier",
                                     type :            "onoff",
-                                    action_id_on :    206,
-                                    action_id_off :   207
+                                    name :       "flex_lamp3"
                               },
                               {     label :           "girlande sapin",
                                     type :            "onoff",
-                                    action_id_on :    208,
-                                    action_id_off :   209
+                                    name :       "flex_lamp2"
                               }
                         ]
                   }
@@ -214,15 +208,13 @@ app.controller('controlCtrl', ['$scope','webSocket',function($scope,webSocket) {
                   {     title :     'extérieur',
                         style :     'warning',
                         content:    [
-                              {     label :     "luminaire",
-                                    type :      "onoff",
-                                    action_id_on :    300,
-                                    action_id_off :   301
+                              {     label :           "luminaire",
+                                    type :            "onoff",
+                                    name :       ""
                               },
-                              {     label :     "applique",
-                                    type :      "onoff",
-                                    action_id_on :    302,
-                                    action_id_off :   303
+                              {     label :           "applique",
+                                    type :            "onoff",
+                                    name :       ""
                               }
                         ]
                   }
