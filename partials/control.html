@@ -11,13 +11,13 @@
 						<div ng-repeat="item3 in item2.content">
 							<div class="row">
 								<div class="col" ng-switch="item3.type">
-									<div ng-switch-when="updown"><button class="btn btn-primary" type="button" ng-click="fireAction(item3.action_type,item3.name,'down')"><span class="fa fa-chevron-down" aria-hidden="true"></span></button></div>
-									<div ng-switch-when="onoff"><button class="btn btn-info" type="button" ng-click="fireAction(item3.action_type,item3.name,'off')">off</button></div>
+									<div ng-switch-when="updown"><button class="btn btn-primary" type="button" ng-click="fireAction(item3.type,item3.name,'down')"><span class="fa fa-chevron-down" aria-hidden="true"></span></button></div>
+									<div ng-switch-when="onoff"><button class="btn btn-info" type="button" ng-click="fireAction(item3.type,item3.name,'off')">off</button></div>
 								</div>
 								<div class="col align-self-center">{{item3.label}}</div>
 								<div class="col" ng-switch="item3.type">
-									<div ng-switch-when="updown"><button class="btn btn-primary" type="button" ng-click="item3.action_type,item3.name,'up')"><span class="fa fa-chevron-up" aria-hidden="true"></span></button></div>
-									<div ng-switch-when="onoff"><button class="btn btn-info" type="button" ng-click="fireAction(item3.action_type,item3.name,'on')">on</button></div>
+									<div ng-switch-when="updown"><button class="btn btn-primary" type="button" ng-click="fireAction(item3.type,item3.name,'up')"><span class="fa fa-chevron-up" aria-hidden="true"></span></button></div>
+									<div ng-switch-when="onoff"><button class="btn btn-info" type="button" ng-click="fireAction(item3.type,item3.name,'on')">on</button></div>
 								</div>
 							</div>
 							<div class="row">

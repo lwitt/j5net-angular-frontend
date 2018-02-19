@@ -144,7 +144,7 @@ app.controller('mainController', ['$scope', '$timeout', 'webSocket', 'nodes', 's
 app.controller('controlCtrl', ['$scope','webSocket',function($scope,webSocket) {
 
         $scope.fireAction = function (type,name,action) {
-            console.log("action fired : name=" + name);
+            console.log("action fired : name=" + name + " type="+type + " action="+action);
             webSocket.emit('action',JSON.stringify({type : type, name:name, action:action}));
         }
 
