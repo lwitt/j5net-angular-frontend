@@ -41,9 +41,9 @@
 	<div class="col-2" align="center">
 		<div class="progress-wrapper">
 			<div class="progress ngcloak" ng-style="{'left':'50%','top':'45%','bottom':'auto','transform':'translateY(-50%) translateX(-50%)','font-size':'17px'}">
-				{{((nodes["gw0/13"].lastData.t && nodes["gw0/13"].lastUpdate<300) ? (nodes["gw0/13"].lastData.t | number:1)+"°C" : "n/a")}}
+				{{((nodes["gw-1/1"].lastData.w && nodes["gw-1/1"].lastUpdate<300) ? ((nodes["gw-1/1"].lastData.w*60/1000) | number:2)+"kW/h" : "n/a")}}
 			</div>
-			<round-progress max="45" current="((nodes['gw0/13'].lastData.t && nodes['gw0/13'].lastUpdate<300) ? nodes['gw0/13'].lastData.t : 0)" color="#1fb1e1" bgcolor=rgba(0,0,0,0); radius="60" stroke="8" semi="false" rounded="true" clockwise="true" responsive="true" duration="700" animation="easeOutBounce" animation-delay="0"></round-progress>
+			<round-progress max="45" current="((nodes['gw-1/1'].lastData.w && nodes['gw-1/1'].lastUpdate<300) ? (nodes['gw-1/1'].lastData.w*60/1000) : 0)" color="#1fb1e1" bgcolor=rgba(0,0,0,0); radius="60" stroke="8" semi="false" rounded="true" clockwise="true" responsive="true" duration="700" animation="easeOutBounce" animation-delay="0"></round-progress>
 		</div>
 		<div align="center"><a href="#/detail/gw0/13"><!--<div><span class="badge">25</span></div>--><div><small>{{nodes["gw0/13"].name || "n/a"}}</small></div></a></div>
 	</div>
@@ -51,11 +51,11 @@
 	<div class="col-2" align="center">
 		<div class="progress-wrapper">
 			<div class="progress ngcloak" ng-style="{'left':'50%','top':'45%','bottom':'auto','transform':'translateY(-50%) translateX(-50%)','font-size':'17px'}">
-				{{((nodes["gw0/25"].lastData.t && nodes["gw0/25"].lastUpdate<300) ? (nodes["gw0/25"].lastData.t | number:1)+"°C" : "n/a")}}
+				{{((nodes["gw0/13"].lastData.t && nodes["gw0/13"].lastUpdate<300) ? (nodes["gw0/13"].lastData.t | number:1)+"°C" : "n/a")}}
 			</div>
-			<round-progress max="45" current="((nodes['gw0/25'].lastData.t && nodes['gw0/25'].lastUpdate<300) ? nodes['gw0/25'].lastData.t : 0)" color="#1fb1e1" bgcolor=rgba(0,0,0,0); radius="60" stroke="8" semi="false" rounded="true" clockwise="true" responsive="true" duration="700" animation="easeOutBounce" animation-delay="0"></round-progress>
+			<round-progress max="45" current="((nodes['gw0/13'].lastData.t && nodes['gw0/13'].lastUpdate<300) ? nodes['gw0/13'].lastData.t : 0)" color="#1fb1e1" bgcolor=rgba(0,0,0,0); radius="60" stroke="8" semi="false" rounded="true" clockwise="true" responsive="true" duration="700" animation="easeOutBounce" animation-delay="0"></round-progress>
 		</div>
-		<div align="center"><a href="#/detail/gw0/25"><!--<div><span class="badge">25</span></div>--><div><small>{{nodes["gw0/25"].name || "n/a"}}</small></div></a></div>
+		<div align="center"><a href="#/detail/gw0/13"><!--<div><span class="badge">25</span></div>--><div><small>{{nodes["gw0/13"].name || "n/a"}}</small></div></a></div>
 	</div>
 </div>
 
