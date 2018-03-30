@@ -54,6 +54,7 @@ app.factory('webSocket', function (socketFactory) {
       mySocket.forward('node-detail');
       mySocket.forward('car-position');
       mySocket.forward('weather');
+      mySocket.forward('debug');
       mySocket.forward('traffic');
       return mySocket;
 });

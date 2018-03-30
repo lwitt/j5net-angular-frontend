@@ -88,6 +88,12 @@ app.controller('mainController', ['$scope', '$timeout', 'webSocket', 'nodes', 's
             applog.add("weather received","info");
       });
 
+      $scope.$on('socket:debug', function (ev, data) {
+            console.log("debug="+data);
+            if (Array.isArray(data) && data.length==2)
+                  applog.add(data[0]+":"+data[1],"info");
+      });
+
       $scope.$on('socket:traffic', function (ev, data) {
             // console.log("traffic received");
             // console.log(data);
