@@ -41,11 +41,11 @@
 	<div class="col-2" align="center">
 		<div class="progress-wrapper">
 			<div class="progress ngcloak" ng-style="{'left':'50%','top':'45%','bottom':'auto','transform':'translateY(-50%) translateX(-50%)','font-size':'17px'}">
-				{{((nodes["gw-1/1"].lastData.w && nodes["gw-1/1"].lastUpdate<300) ? ((nodes["gw-1/1"].lastData.w)+"kW/h" : "n/a")}}
+				{{((nodes["gw-1/1"].lastData.w && nodes["gw-1/1"].lastUpdate<300) ? ((nodes["gw-1/1"].lastData.w) | number:2)+"kW/h" : "n/a")}}
 			</div>
 			<round-progress max="10" current="((nodes['gw-1/1'].lastData.w && nodes['gw-1/1'].lastUpdate<300) ? (nodes['gw-1/1'].lastData.w) : 0)" color="#1fb1e1" bgcolor=rgba(0,0,0,0); radius="60" stroke="8" semi="false" rounded="true" clockwise="true" responsive="true" duration="700" animation="easeOutBounce" animation-delay="0"></round-progress>
 		</div>
-		<div align="center"><a href="#/detail/gw0/13"><!--<div><span class="badge">25</span></div>--><div><small>{{nodes["gw0/13"].name || "n/a"}}</small></div></a></div>
+		<div align="center"><a href="#/detail/gw0/13"><!--<div><span class="badge">25</span></div>--><div><small>{{nodes["gw-1/1"].name || "n/a"}}</small></div></a></div>
 	</div>
 
 	<div class="col-2" align="center">
